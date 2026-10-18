@@ -1,15 +1,15 @@
 ; SketchUp Chords - one command per line: triggers,keys,description
-;   triggers     what you type; separate aliases with |  (e.g. pla|plan)
-;   keys         the shortcut to press, in AutoHotkey Send syntax:
-;                ^ Ctrl  + Shift  ! Alt   named keys in braces: {F4} {Space}
-;   description  optional; quote it if it contains a comma
-; Lines starting with ; are ignored. Reload the script after editing.
+;   triggers     what you type; separate aliases with |  (e.g. pla|plan),,
+;   keys         the shortcut to press, in AutoHotkey Send syntax:,
+;                ^ Ctrl  + Shift  ! Alt   named keys in braces: {F4} {Space},,
+;   description  optional; quote it if it contains a comma,,
+; Lines starting with ; are ignored. Reload the script after editing.,,
 al,a,Tools/Curic/Align/Align Tool
 cla,c,Extensions/5D+/5D+ Plus/Classification
 ctag,{F2},Extensions/5D+/5D+ Auto Tag/Color By Tag
 cut,+{F4},View/Section Cuts
 da,^d,selectTextTool (dim annotation)
-dc,^+d,Edit/Item/Dynamic Components/Component Options
+dc|dyn|dopt,^+d,Edit/Item/Dynamic Components/Component Options
 dd,+d,selectDimensionTool (dim dim)
 dx,^!d,Edit/Item/Dynamic Components/Component Attributes
 dt,d,selectMeasureTool (dim tape)
