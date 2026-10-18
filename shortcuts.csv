@@ -1,0 +1,52 @@
+; SketchUp Chords - one command per line: triggers,keys,description
+;   triggers     what you type; separate aliases with |  (e.g. pla|plan)
+;   keys         the shortcut to press, in AutoHotkey Send syntax:
+;                ^ Ctrl  + Shift  ! Alt   named keys in braces: {F4} {Space}
+;   description  optional; quote it if it contains a comma
+; Lines starting with ; are ignored. Reload the script after editing.
+al,a,Tools/Curic/Align/Align Tool
+cla,c,Extensions/5D+/5D+ Plus/Classification
+ctag,{F2},Extensions/5D+/5D+ Auto Tag/Color By Tag
+cut,+{F4},View/Section Cuts
+da,^d,selectTextTool (dim annotation)
+dc,^+d,Edit/Item/Dynamic Components/Component Options
+dd,+d,selectDimensionTool (dim dim)
+dx,^!d,Edit/Item/Dynamic Components/Component Attributes
+dt,d,selectMeasureTool (dim tape)
+ee,+e,Tools/Curic/DIO 2/Erase
+ex,^+g,Edit/Item/Explode
+fc,+f,Tools/Curic/Mirror/Mirror Mid Between Two Points
+ff,f,selectFlipTool
+iso,+{F5},viewIso
+pers,{F5},viewPerspective
+ha,^+h,Edit/Unhide/All
+hh,h,editHide
+hs,+h,Edit/Unhide/Last
+lc,+l,Tools/Curic/DIO 2/Line
+line,l,selectLineTool
+list,+p,Extensions/OpenCutList/Parts List
+mo,^+m,Window/Model Info
+mv,v,selectMoveTool
+none,+{Space},Edit/Select None
+paint,b,Extensions/OpenCutList/Paint Parts/Paint Parts
+par,p,Edit/Item/OpenCutList/Edit the properties (axes) of the part
+pla,{F4},View/Section Planes
+pp,^+v,Edit/Paste In Place
+pr,^+p,Window/Preferences
+push,+t,selectPushPullTool
+rrt,^r,selectRectangle3PointTool
+rrd,+r,Tools/Curic/DIO 2/Rectangle
+rd,y,Edit/Item/Dynamic Components/Redraw
+ro,w,selectRotateTool
+re,r,Extensions/OpenCutList/Draw Parts/Draw Parts
+rs,^+r,selectRectangleTool (rectangle sketchup)
+sc,s,selectScaleTool
+sec,^+s,Extensions/5D+/5D+ Plus/Create Section Scenes
+sh,+w,Extensions/OpenCutList/Handle Parts/Handle Parts
+st,+v,Tools/Curic/Stretch/Select Tool
+tt,t,Tools/Curic/DIO 2/Trowel
+tz,z,Tools/Curic/Section View/Controller (toggle zoom)
+uni,q,Edit/Item/Make Unique
+upd,^+u,Tools/Curic/Section/Update All
+uu,u,editUndo
+vis,+c,Extensions/5D+/5D+ Plus/Visibility
