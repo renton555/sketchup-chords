@@ -1,10 +1,14 @@
 ; SketchUp Chords - one command per line: triggers,keys,description
 ;   triggers     what you type; separate aliases with |  (e.g. pla|plan),,
+;                fires as soon as typed; start with :: to wait for Space or Enter
 ;   keys         the shortcut to press, in AutoHotkey Send syntax:,
 ;                ^ Ctrl  + Shift  ! Alt   named keys in braces: {F4} {Space},,
 ;   description  optional; quote it if it contains a comma,,
 ; Lines starting with ; are ignored. Reload the script after editing.,,
 al,a,Tools/Curic/Align/Align Tool
+arcd,^!+a,Draw/Arcs/Arc
+arct,^!+{Comma},Draw/Arcs/2 Point Arc
+cir,+c,Draw/Shapes/Circle
 cla,c,Extensions/5D+/5D+ Plus/Classification
 ctag,{F2},Extensions/5D+/5D+ Auto Tag/Color By Tag
 cut,+{F4},View/Section Cuts
@@ -31,6 +35,7 @@ none,+{Space},Edit/Select None
 paint,b,Extensions/OpenCutList/Paint Parts/Paint Parts
 par,p,Edit/Item/OpenCutList/Edit the properties (axes) of the part
 pla,{F4},View/Section Planes
+pcam|pos,{F6},Camera/Position Camera
 pp,^+v,Edit/Paste In Place
 pr,^+p,Window/Preferences
 push,+t,selectPushPullTool
@@ -49,4 +54,5 @@ tz,z,Tools/Curic/Section View/Controller (toggle zoom)
 uni,q,Edit/Item/Make Unique
 upd,^+u,Tools/Curic/Section/Update All
 uu,u,editUndo
-vis,+c,Extensions/5D+/5D+ Plus/Visibility
+vis,+i,Extensions/5D+/5D+ Plus/Visibility
+ze,^!+z,Camera/Zoom Extents

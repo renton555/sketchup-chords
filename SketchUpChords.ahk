@@ -55,10 +55,17 @@ LoadChords(path) {
 map_cmd(triggers, keys, description := "") {
     ; Send() types a bare "F4" as two letters; a function key needs braces
     keys := RegExReplace(keys, "i)^([\^+!#]*)(F\d{1,2})$", "$1{$2}")
-    CommandRegistry[triggers[1]] := {aliases: triggers, keys: keys, desc: description}
 
-    for trigger in triggers
-        Hotstring(":*:" trigger, (*) => Fire(keys))
+    ; A bare trigger fires instantly; one written with its own hotstring
+    ; options (::rect waits for Space or Enter) is passed through as-is
+    aliases := []
+    for trigger in triggers {
+        if (SubStr(trigger, 1, 1) != ":")
+            trigger := ":*:" trigger
+        Hotstring(trigger, (*) => Fire(keys))
+        aliases.Push(RegExReplace(trigger, "^:[^:]*:"))
+    }
+    CommandRegistry[aliases[1]] := {aliases: aliases, keys: keys, desc: description}
 }
 
 Fire(shortcut) {

@@ -36,7 +36,7 @@ pla|plan,{F4},View/Section Planes
 
 | Column | Meaning |
 | --- | --- |
-| triggers | What you type. Separate aliases with `\|`. |
+| triggers | What you type. Separate aliases with `\|`. Fires as soon as it's typed; start it with `::` (e.g. `::rect`) to wait for Space or Enter instead. |
 | keys | The SketchUp shortcut it presses: `^` Ctrl, `+` Shift, `!` Alt. Put named keys in braces: `{F4}`, `{Space}`, `{Delete}`. |
 | description | Optional note. Put it in quotes if it contains a comma. |
 
@@ -51,7 +51,8 @@ After editing, right-click the tray icon and choose **Reload shortcuts**.
 
 A chord fires the instant it's typed, so a short chord can block a longer one
 that starts the same way. If `re` exists, `rect` can never be reached. Keep
-chords distinct at the start.
+chords distinct at the start, or make the shorter one wait for an ending key:
+`::re` lets `rect` through, and fires `re` when you press Space or Enter.
 
 ## Troubleshooting
 
