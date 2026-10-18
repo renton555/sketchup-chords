@@ -7,52 +7,88 @@
 ; Lines starting with ; are ignored. Reload the script after editing.,,
 al,a,Tools/Curic/Align/Align Tool
 arcd,^!+a,Draw/Arcs/Arc
-arct,^!+{Comma},Draw/Arcs/2 Point Arc
+arct,"^!+{,}",Draw/Arcs/2 Point Arc
+axes,{F8},View/Axes
+be,^b,Extensions/Bevel/Bevel Tool
+cascade,+3,Extensions/Cascade dialogs
+cdef,!+c,Edit/Item/CuricDIO/Copy Definition
 cir,+c,Draw/Shapes/Circle
+cid,^!+c,Tools/Curic/DIO 2/Circle
+cfind,^+f,Extensions/FlexTools/Component Finder
+ch,k,Tools/Curic/OI/Chalkline
 cla,c,Extensions/5D+/5D+ Plus/Classification
-ctag,{F2},Extensions/5D+/5D+ Auto Tag/Color By Tag
+ctag,!+t,Edit/Item/CuricDIO/Copy Layer
+cmat,!+m,Edit/Item/CuricDIO/Copy Material
+cba,+{F2},View/Rendering/Edge/By Axis
+cbt,{F2},Extensions/5D+/5D+ Auto Tag/Color By Tag
 cut,+{F4},View/Section Cuts
-da,^d,selectTextTool (dim annotation)
-dc|dyn|dopt,^+d,Edit/Item/Dynamic Components/Component Options
+dc,^d,Edit/Item/Dynamic Components/Component Options
 dd,+d,selectDimensionTool (dim dim)
-dx,^!d,Edit/Item/Dynamic Components/Component Attributes
-dt,d,selectMeasureTool (dim tape)
+dg,+{F7},Edit/Delete Guides
+drc,^!+i,Extensions/OpenCutList/Draw Circle
+drg,^!+g,Extensions/OpenCutList/Draw Polygon
+drr,r,Extensions/OpenCutList/Draw Rectangle
+drp,^!+p,Extensions/OpenCutList/Draw Parts
+dx,^+d,Edit/Item/Dynamic Components/Component Attributes
 ee,+e,Tools/Curic/DIO 2/Erase
+ehcg,^+{.},Extensions/OpenCutList/Handle Parts/Handle Parts/Copy along Grid
+ehcl,^{.},Extensions/OpenCutList/Handle Parts/Handle Parts/Copy along Line
+ehd,"^+{,}",Extensions/OpenCutList/Handle Parts/Handle Parts/Distribute
+ehm,^!+v,Extensions/OpenCutList/Handle Parts/Handle Parts/Move
+ehp,e,Extensions/OpenCutList/Handle Parts/Handle Parts
+ehs,"^{,}",Extensions/OpenCutList/Handle Parts/Handle Parts/Select
 ex,^+g,Edit/Item/Explode
 fc,+f,Tools/Curic/Mirror/Mirror Mid Between Two Points
-ff,f,selectFlipTool
+fill,^+{F4},View/Section Fill
+geo,+{F3},View/Hidden Geometry
+inter,+k,Tools/Curic/OI/Intersect
 iso,+{F5},viewIso
 pers,{F5},viewPerspective
 ha,^+h,Edit/Unhide/All
 hh,h,editHide
 hs,+h,Edit/Unhide/Last
 lc,+l,Tools/Curic/DIO 2/Line
+lp,^!+l,Tools/Curic/DIO 2/Polyline
 line,l,selectLineTool
-list,+p,Extensions/OpenCutList/Parts List
-mo,^+m,Window/Model Info
+list,^l,Extensions/OpenCutList/Generate Parts List
+lock,^+k,Edit/Lock
+model,^+m,Window/Model Info
 mv,v,selectMoveTool
-none,+{Space},Edit/Select None
+name,^+n,Set Names
+obj,{F3},View/Hidden Objects
+off,+o,Tools/Offset
+ofc,o,Curic/OI/Offset
 paint,b,Extensions/OpenCutList/Paint Parts/Paint Parts
 par,p,Edit/Item/OpenCutList/Edit the properties (axes) of the part
 pla,{F4},View/Section Planes
 pcam|pos,{F6},Camera/Position Camera
+pdef|pmat|ptag,!+v,Edit/Item/CuricDIO/Paste
 pp,^+v,Edit/Paste In Place
-pr,^+p,Window/Preferences
+pref,^+p,Window/Preferences
+prot,^+{F7},Tools/Protractor
+prep,^p,Cutlist Prep
 push,+t,selectPushPullTool
+purge,^+j,Edit/Purged Unused Assets
+q,q,Edit/Item/Make Unique
 rrt,^r,selectRectangle3PointTool
 rrd,+r,Tools/Curic/DIO 2/Rectangle
 rd,y,Edit/Item/Dynamic Components/Redraw
+rc,+w,Tools/Curic/Rotate/Rotate Tool
 ro,w,selectRotateTool
-re,r,Extensions/OpenCutList/Draw Parts/Draw Parts
 rs,^+r,selectRectangleTool (rectangle sketchup)
-sc,s,selectScaleTool
-sec,^+s,Extensions/5D+/5D+ Plus/Create Section Scenes
-sh,+w,Extensions/OpenCutList/Handle Parts/Handle Parts
+ss,+s,selectScaleTool
 st,+v,Tools/Curic/Stretch/Select Tool
+tape,d,selectMeasureTool (dim tape)
+tg,{F7},View/Guides
 tt,t,Tools/Curic/DIO 2/Trowel
 tz,z,Tools/Curic/Section View/Controller (toggle zoom)
 uni,q,Edit/Item/Make Unique
+unl,^!+k,Edit/Unlock/Selected
 upd,^+u,Tools/Curic/Section/Update All
-uu,u,editUndo
+::w,^s,File/Save
+::was,^+s,File/Save As...
+xman,^m,Extensions/Extension Manager
+xray,{F9},View/Face Style/X-ray
+xx,!{F4},File/Exit
 vis,+i,Extensions/5D+/5D+ Plus/Visibility
 ze,^!+z,Camera/Zoom Extents
