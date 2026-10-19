@@ -59,7 +59,7 @@ obj,{F3},View/Hidden Objects
 off,+o,Tools/Offset
 ofc,o,Curic/OI/Offset
 paint,b,Extensions/OpenCutList/Paint Parts/Paint Parts
-par,p,Edit/Item/OpenCutList/Edit the properties (axes) of the part
+part,p,Edit/Item/OpenCutList/Edit the properties (axes) of the part
 pla,{F4},View/Section Planes
 pcam|pos,{F6},Camera/Position Camera
 pdef|pmat|ptag,!+v,Edit/Item/CuricDIO/Paste
