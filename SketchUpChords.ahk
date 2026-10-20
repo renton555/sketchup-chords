@@ -11,6 +11,10 @@ SendMode "Input"
 ; (right-click the AutoHotkey tray icon) if the chords don't fire.
 SKETCHUP_WINDOW := "ahk_class Qt691QWindowToolSaveBits"
 
+; Where Search opens, measured from the top-left corner of the SketchUp
+; window. Set to "" to leave it where SketchUp puts it.
+PALETTE_OFFSET := [20, 80]
+
 CSV_PATH := A_ScriptDir "\shortcuts.csv"
 
 ; Every command, keyed by its first trigger, for a future WhichKey-style UI
@@ -25,6 +29,28 @@ A_TrayMenu.Add("Reload shortcuts", (*) => Reload())
 HotIfWinActive(SKETCHUP_WINDOW)
 LoadChords(CSV_PATH)
 HotIfWinActive()
+
+; EVENT_SYSTEM_FOREGROUND fires as Search takes focus, before it is drawn
+if PALETTE_OFFSET
+    DllCall("SetWinEventHook", "uint", 0x3, "uint", 0x3, "ptr", 0
+        , "ptr", CallbackCreate(MovePalette, "F", 7), "uint", 0, "uint", 0, "uint", 0)
+
+; Panels such as Controller share Search's window class; only Search is
+; titled plain "SketchUp", and it is owned by the main SketchUp window
+MovePalette(hook, event, hwnd, *) {
+    try {
+        if !WinExist(SKETCHUP_WINDOW " ahk_id " hwnd) || WinGetTitle(hwnd) != "SketchUp"
+            return
+        owner := DllCall("GetWindow", "ptr", hwnd, "uint", 4, "ptr")  ; GW_OWNER
+        if !owner
+            return
+        ; The visible frame, without the invisible resize border around it
+        rect := Buffer(16)
+        DllCall("dwmapi\DwmGetWindowAttribute", "ptr", owner, "uint", 9, "ptr", rect, "uint", 16)
+        WinMove(NumGet(rect, 0, "int") + PALETTE_OFFSET[1]
+            , NumGet(rect, 4, "int") + PALETTE_OFFSET[2], , , hwnd)
+    }
+}
 
 Toast(msg, ms := 2000) {
     ToolTip msg
