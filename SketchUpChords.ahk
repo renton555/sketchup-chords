@@ -60,12 +60,26 @@ map_cmd(triggers, keys, description := "") {
     ; options (::rect waits for Space or Enter) is passed through as-is
     aliases := []
     for trigger in triggers {
+        if RegExMatch(trigger, "^\{(\w+)\}$", &m) {
+            DoubleTap(m[1], keys)
+            aliases.Push(trigger)
+            continue
+        }
         if (SubStr(trigger, 1, 1) != ":")
             trigger := ":*:" trigger
         Hotstring(trigger, (*) => Fire(keys))
         aliases.Push(RegExReplace(trigger, "^:[^:]*:"))
     }
     CommandRegistry[aliases[1]] := {aliases: aliases, keys: keys, desc: description}
+}
+
+; A {Key} trigger fires on a double-tap. Only a press that directly follows
+; another press of the same key is caught, so the first tap still reaches
+; SketchUp (e.g. Space opens Search) and so do keys typed in between.
+DoubleTap(key, keys) {
+    HotIf((*) => WinActive(SKETCHUP_WINDOW) && A_PriorKey = key)
+    Hotkey(key, (*) => Fire(keys))
+    HotIfWinActive(SKETCHUP_WINDOW)
 }
 
 Fire(shortcut) {

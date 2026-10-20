@@ -1,6 +1,7 @@
 ; SketchUp Chords - one command per line: triggers,keys,description
 ;   triggers     what you type; separate aliases with |  (e.g. pla|plan),,
 ;                fires as soon as typed; start with :: to wait for Space or Enter
+;                a key in braces, e.g. {Space}, fires on a double-tap of that key
 ;   keys         the shortcut to press, in AutoHotkey Send syntax:,
 ;                ^ Ctrl  + Shift  ! Alt   named keys in braces: {F4} {Space},,
 ;   description  optional; quote it if it contains a comma,,
@@ -92,3 +93,4 @@ xray,{F9},View/Face Style/X-ray
 xx,!{F4},File/Exit
 vis,+i,Extensions/5D+/5D+ Plus/Visibility
 ze,^!+z,Camera/Zoom Extents
+{Space},^!+b,Tools/Select

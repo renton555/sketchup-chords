@@ -36,7 +36,7 @@ pla|plan,{F4},View/Section Planes
 
 | Column | Meaning |
 | --- | --- |
-| triggers | What you type. Separate aliases with `\|`. Fires as soon as it's typed; start it with `::` (e.g. `::rect`) to wait for Space or Enter instead. |
+| triggers | What you type. Separate aliases with `\|`. Fires as soon as it's typed; start it with `::` (e.g. `::rect`) to wait for Space or Enter instead. Write a key in braces (e.g. `{Space}`) to fire on a double-tap of that key; the first tap still does what SketchUp has it bound to. |
 | keys | The SketchUp shortcut it presses: `^` Ctrl, `+` Shift, `!` Alt. Put named keys in braces: `{F4}`, `{Space}`, `{Delete}`. |
 | description | Optional note. Put it in quotes if it contains a comma. |
 
