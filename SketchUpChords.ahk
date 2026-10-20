@@ -111,5 +111,20 @@ DoubleTap(key, keys) {
 Fire(shortcut) {
     Send("{Esc}")
     Sleep(50)
-    Send(shortcut)
+    Send(AltUpFirst(shortcut))
+}
+
+; Releasing Alt after Ctrl or Shift leaves SketchUp's menu bar holding the
+; keyboard focus until the window is clicked; releasing Alt first does not
+AltUpFirst(keys) {
+    if !RegExMatch(keys, "^([\^+!#]*!)([\^+!#]*)(\{[^}]+\}|[^{])$", &m)
+        return keys
+    names := Map("^", "Ctrl", "+", "Shift", "!", "Alt", "#", "LWin")
+    down := "", up := "{Alt up}"
+    for mod in StrSplit(m[1] m[2]) {
+        down .= "{" names[mod] " down}"
+        if (mod != "!")
+            up .= "{" names[mod] " up}"
+    }
+    return down m[3] up
 }
